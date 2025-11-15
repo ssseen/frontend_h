@@ -3,22 +3,17 @@
 
 <head>
 <meta charset="utf-8">
-<title>결정이 쉽지않은 그대를 위한 점메추</title>
+<title>스팸문자 구분기</title>
 <link type = "text/css" rel = "stylesheet" href = "style.css">
 </head>
 
 <body>
-<h3>점심 메뉴 추천해드립니다!</h3>
+<h3>스팸 문자인지 확인해볼수 있습니다</h3>
 <hr>
-<img src="https://i.postimg.cc/zDQRn5vZ/image.jpg" height="300" alt="뭐먹지">
 <form id="form">
-   끌리는 <b>음식 종류</b>는?<br>
-   <small>예시 : 한식, 일식, 중식 etc</small>
-   <input type="text" id="foodStyle" name="foodStyle" /><br>
-   끌리는 <b>메인 재료</b>나 <b>맛</b>은?<br>
-   <small>예시 : 밥, 면, 매운맛 etc</small><br>
-   <input type="text" id="mainIngredient" name="mainIngredient" />
-   <button class="button" type = "submit">추천받기</button>
+   <b>문자 내용</b>을 넣으세요<br>
+   <input type="text" id="spamMessage" name="spamMassage" /><br>
+   <button class="button" type = "submit">확인하기</button>
 </form>
 
 <div id = "result"></div>
@@ -30,18 +25,16 @@
    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const foodStyle = document.getElementById("foodStyle").value;
-      const mainIngredient = document.getElementById("mainIngredient").value;
-
-      resultDiv.textContent = "메뉴 엄선중...";
+      const foodStyle = document.getElementById("spamMassage").value;
+      resultDiv.textContent = "구분중...";
 
       try {
-         const response = await fetch("https://backend-only-three.vercel.app/api/ssseenAI", {
+         const response = await fetch("https://backend-h-nine.vercel.app/", {
             method : "POST",
             headers : {
                "Content-Type" : "application/json",
             },
-            body : JSON.stringify({foodStyle, mainIngredient}),
+            body : JSON.stringify({foodStyle}),
          });
 
          const data = await response.json();
