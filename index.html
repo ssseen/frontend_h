@@ -12,7 +12,7 @@
 <hr>
 <form id="form">
    <b>문자 내용</b>을 넣으세요<br>
-   <input type="text" id="spamMessage" name="spamMassage" /><br>
+   <input type="text" id="spamM" name="spamM" /><br>
    <button class="button" type = "submit">확인하기</button>
 </form>
 
@@ -25,16 +25,16 @@
    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const foodStyle = document.getElementById("spamMassage").value;
+      const spamM = document.getElementById("spamM").value;
       resultDiv.textContent = "구분중...";
 
       try {
-         const response = await fetch("https://backend-h-nine.vercel.app/", {
+         const response = await fetch("https://backend-h-nine.vercel.app/api/ssseenAI_h", {
             method : "POST",
             headers : {
                "Content-Type" : "application/json",
             },
-            body : JSON.stringify({foodStyle}),
+            body : JSON.stringify({spamM}),
          });
 
          const data = await response.json();
