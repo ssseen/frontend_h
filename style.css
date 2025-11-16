@@ -2,12 +2,16 @@ input:hover, textarea:hover {
    background : rgb(212, 228, 234);
 }
 input {
-   text-align : center;
    display : block;
    margin : 20px auto 30px auto;
    width : 500px;
    height : 400px;
    font-size : 18px;
+   padding : 10px;
+   resize : none;
+   box-sizing : border-box;
+   line-height : 1.4;
+   white-space : pre-wrap;
 }
 small {
    font-size : 17px;
