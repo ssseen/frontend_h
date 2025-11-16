@@ -1,17 +1,18 @@
 input:hover, textarea:hover {
    background : rgb(212, 228, 234);
 }
-input {
+textarea {
    display : block;
    margin : 20px auto 30px auto;
    width : 500px;
    height : 400px;
    font-size : 18px;
    padding : 10px;
-   resize : none;
    box-sizing : border-box;
    line-height : 1.4;
    white-space : pre-wrap;
+   overflow-wrap : break-word;
+   resize : none;
 }
 small {
    font-size : 17px;
